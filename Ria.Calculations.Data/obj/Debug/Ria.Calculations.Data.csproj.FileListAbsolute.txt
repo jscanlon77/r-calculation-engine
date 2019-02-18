@@ -1,0 +1,6 @@
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\bin\Debug\Ria.Calculations.Data.dll
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\bin\Debug\Ria.Calculations.Data.pdb
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\obj\Debug\Ria.Calculations.Data.csprojAssemblyReference.cache
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\obj\Debug\Ria.Calculations.Data.csproj.CoreCompileInputs.cache
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\obj\Debug\Ria.Calculations.Data.dll
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.Calculations.Data\obj\Debug\Ria.Calculations.Data.pdb

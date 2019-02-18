@@ -1,0 +1,15 @@
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\CalculationsConsole.exe.config
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\CalculationsConsole.exe
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\CalculationsConsole.pdb
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\DynamicInterop.dll
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\RDotNet.dll
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\RDotNet.NativeLibrary.dll
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\DynamicInterop.xml
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\RDotNet.xml
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\RDotNet.NativeLibrary.xml
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\obj\Debug\CalculationsConsole.csprojAssemblyReference.cache
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\obj\Debug\CalculationsConsole.csproj.CoreCompileInputs.cache
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\obj\Debug\CalculationsConsole.csproj.CopyComplete
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\obj\Debug\CalculationsConsole.exe
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\obj\Debug\CalculationsConsole.pdb
+c:\FinTechnology\Calculations\CalculationsConsole\CalculationsConsole\bin\Debug\libraries\xirr\xirrcalc.r

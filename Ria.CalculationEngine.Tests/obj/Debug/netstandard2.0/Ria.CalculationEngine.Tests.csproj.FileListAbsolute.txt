@@ -1,0 +1,9 @@
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.deps.json
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.dll
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.pdb
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.csprojAssemblyReference.cache
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.csproj.CoreCompileInputs.cache
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.AssemblyInfoInputs.cache
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.AssemblyInfo.cs
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.dll
+c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.pdb

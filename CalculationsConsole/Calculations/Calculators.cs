@@ -1,0 +1,23 @@
+﻿
+using Ria.Calculations.Library;
+
+namespace CalculationsConsole.Calculations
+{
+    public class Calculators
+    {
+       
+        public Calculators()
+        {
+            ICalculator calculator = new Calculator();
+
+            // Pass in a bunch of tickers or just one.. we should probably use multiple options here
+            // and allow a full calculation or calculation from T-1 or anything else.
+            // our example will use APPLE..
+            // TODO: This needs to offer much more options.
+            calculator.Initialize(new []{"AAPL"});
+
+            // TODO - put some error checking here...
+            calculator.Calculate();
+        }
+    }
+}
