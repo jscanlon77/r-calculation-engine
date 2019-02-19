@@ -11,13 +11,8 @@ namespace Ria.CalculationEngine.Processors.Implementation
 {
     public class ProducerConsumer<T> : IProducerConsumer<T>
     {
-        
         const int MaxBufferSize = 500;
-
-        const int bufferSize = 20;
-
-
-     
+        const int BufferSize = 20;
         public void Start(BlockingCollection<T> item)
         {
             int initialCount = item.Count;
@@ -31,7 +26,7 @@ namespace Ria.CalculationEngine.Processors.Implementation
                     buffer.Add(value);
 
                     
-                    if (buffer.Count == bufferSize)
+                    if (buffer.Count == BufferSize)
                     {
                         totalProcessed += buffer.Count;
                         ProcessItems(buffer);
@@ -39,7 +34,7 @@ namespace Ria.CalculationEngine.Processors.Implementation
                     }
 
                     // process the last remaining items which are smaller than the batch size.
-                    if (initialCount - totalProcessed < bufferSize)
+                    if (initialCount - totalProcessed < BufferSize)
                     {
                         var items = item.Take(initialCount - totalProcessed).ToList();
                         ProcessItems(items.ToList());

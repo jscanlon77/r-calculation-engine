@@ -89,9 +89,13 @@ namespace Ria.Calculations.Library
 
         public void Calculate()
         {
-            _container.Resolve<IInvestmentBasedCalculations>().Calculate(_engine);
-            _container.Resolve<ICashFlowBasedCalculations>().Calculate(_engine);
-            _container.Resolve<IPriceBasedCalculations>().Calculate(_engine);
+            var ibc = _container.Resolve<IInvestmentBasedCalculations>();
+            var icc = _container.Resolve<ICashFlowBasedCalculations>();
+            var ipb = _container.Resolve<IPriceBasedCalculations>();
+            
+            ibc.Calculate(_engine);
+            ipb.Calculate(_engine);
+            icc.Calculate(_engine);
         }
     }
 }

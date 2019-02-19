@@ -10,6 +10,8 @@ namespace Ria.Calculations.Library.Implementation
     {
         private readonly IDataService _dataService;
 
+        private object _syncLock = new object();
+
         public InvestmentBasedCalculations(IDataService dataService)
         {
             _dataService = dataService;
@@ -17,8 +19,11 @@ namespace Ria.Calculations.Library.Implementation
 
         public override void Calculate(REngine engine)
         {
-            this.MergeTotalEquities(engine);
-            this.MergeInvestedCapital(engine);
+            lock (_syncLock)
+            {
+                this.MergeTotalEquities(engine);
+                this.MergeInvestedCapital(engine);
+            }
         }
 
         private void MergeInvestedCapital(REngine engine)

@@ -10,6 +10,7 @@ namespace Ria.Calculations.Library.Implementation
     {
         private readonly IDataService _dataService;
 
+        private object _syncLock = new object();
         public PriceBasedCalculations(IDataService dataService)
         {
             _dataService = dataService;
@@ -35,10 +36,14 @@ namespace Ria.Calculations.Library.Implementation
 
         public override void Calculate(REngine engine)
         {
-            MergePrices(engine);
-            MergePriceBasedCalcs(engine);
-            MergeVolatility(engine);
-            MergeVaR(engine);
+            lock (_syncLock)
+            {
+                MergePrices(engine);
+                MergePriceBasedCalcs(engine);
+                MergeVolatility(engine);
+                MergeVaR(engine);
+            }
+
         }
 
         private void MergeVaR(REngine engine)
