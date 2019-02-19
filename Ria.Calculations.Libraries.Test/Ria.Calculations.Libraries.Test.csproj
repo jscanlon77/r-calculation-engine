@@ -67,6 +67,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ria.CalculationEngine.Processors\Ria.CalculationEngine.Processors.csproj">
+      <Project>{EC705530-75A4-40BA-AAEA-5A86CC5CCF50}</Project>
+      <Name>Ria.CalculationEngine.Processors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ria.Calculations.Data\Ria.Calculations.Data.csproj">
       <Project>{D023B37E-A323-4C8C-A150-629F45BD375E}</Project>
       <Name>Ria.Calculations.Data</Name>

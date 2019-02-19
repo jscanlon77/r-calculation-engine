@@ -4,21 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RDotNet;
+using Ria.CalculationEngine.Processors.Interface;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Base;
 using Ria.Calculations.Library.Events;
 using Ria.Calculations.Library.Interfaces;
+using Ria.Calculations.Library.Model;
 
 namespace Ria.Calculations.Library.Implementation
 {
     public class CashFlowBasedCalculations : CalculationBase, ICashFlowBasedCalculations
     {
         private readonly IDataService _dataService;
+        private readonly IProducerConsumer<CashFlowBasedItem> _producerConsumer;
 
-        public CashFlowBasedCalculations(IDataService dataService)
+        public CashFlowBasedCalculations(IDataService dataService, IProducerConsumer<CashFlowBasedItem> producerConsumer)
         {
             _dataService = dataService;
+            _producerConsumer = producerConsumer;
+
+            _producerConsumer.ProcessBatchedItems += OnProcessBatchedItems;
         }
+
+        private void OnProcessBatchedItems(List<CashFlowBasedItem> cashFlowBatchedItems)
+        {
+            // Now send the batched items to the database
+            this._dataService.MergeCashFlows();
+        }
+
         public override void Calculate(REngine engine)
         {
             this.MergeCashFlows(engine);
@@ -61,7 +74,18 @@ namespace Ria.Calculations.Library.Implementation
             var listOfDates = dataFrame.ElementAt(0).ToList();
             var listOfValues = dataFrame.ElementAt(1).ToList();
 
-            this._dataService.MergeCashFlows();
+            var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })
+                .ToDictionary(x => x.k, x => x.v);
+
+            Parallel.ForEach(dic, (item) =>
+            {
+                CashFlowBasedItem cfItem = new CashFlowBasedItem();
+                cfItem.Date = (DateTime) item.Key;
+                cfItem.Cashflow = (double) item.Value;
+                this._producerConsumer.AddToProducer(cfItem);
+            });
+
+
 
         }
     }

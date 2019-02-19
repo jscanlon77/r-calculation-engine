@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ using RDotNet;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Implementation;
 using Ria.Calculations.Library.Interfaces;
+using Ria.CalculationEngine.Processors;
+using Ria.CalculationEngine.Processors.Interface;
 
 namespace Ria.Calculations.Library
 {
@@ -44,6 +47,11 @@ namespace Ria.Calculations.Library
             _container.Register(Component.For<IInvestmentBasedCalculations>().ImplementedBy<InvestmentBasedCalculations>());
             _container.Register(Component.For<ICashFlowBasedCalculations>().ImplementedBy<CashFlowBasedCalculations>());
             _container.Register(Component.For<IDataService>().ImplementedBy<IDataService>());
+            _container.Register(AllTypes.FromAssemblyContaining<Calculator>()
+                .BasedOn(typeof(IProducerConsumer<>))
+                .WithService.Base());
+
+
         }
 
 

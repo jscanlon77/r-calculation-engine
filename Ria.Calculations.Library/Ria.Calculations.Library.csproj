@@ -67,6 +67,7 @@
     <Compile Include="Interfaces\IInvestmentBasedCalculations.cs" />
     <Compile Include="Implementation\InvestmentBasedCalculations.cs" />
     <Compile Include="Interfaces\IPriceBasedCalculations.cs" />
+    <Compile Include="Model\CashFlowBasedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +80,10 @@
     <Folder Include="RLibs\VaR\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ria.CalculationEngine.Processors\Ria.CalculationEngine.Processors.csproj">
+      <Project>{ec705530-75a4-40ba-aaea-5a86cc5ccf50}</Project>
+      <Name>Ria.CalculationEngine.Processors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ria.Calculations.Data\Ria.Calculations.Data.csproj">
       <Project>{D023B37E-A323-4C8C-A150-629F45BD375E}</Project>
       <Name>Ria.Calculations.Data</Name>
