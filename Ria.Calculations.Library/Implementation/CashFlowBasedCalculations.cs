@@ -29,7 +29,7 @@ namespace Ria.Calculations.Library.Implementation
 
         private void OnProcessBatchedItems(List<CashFlowBasedItem> cashFlowBatchedItems)
         {
-            // Now send the batched items to the database probably via some sort of SqlBulkLoader
+            // Now send the batched items to the database probably via some sort of SqlBulkCopy
             this._dataService.MergeCashFlows();
         }
 
