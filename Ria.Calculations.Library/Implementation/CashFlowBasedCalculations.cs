@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,7 @@ namespace Ria.Calculations.Library.Implementation
         public override void Calculate(REngine engine)
         {
             this.MergeCashFlows(engine);
-            this.MergeXirr(engine);
+            //this.MergeXirr(engine);
         }
 
         // Fires something to tell that we've merged
@@ -71,19 +72,39 @@ namespace Ria.Calculations.Library.Implementation
             engine.Evaluate("FCF = get.fund.data('free cash flow', fund, fund.date)");
             engine.Evaluate("cashFlows <- data.frame(date=index(FCF), coredata(FCF))");
             var dataFrame = engine.Evaluate("cashFlows").AsDataFrame();
-            var listOfDates = dataFrame.ElementAt(0).ToList();
+
+            DateTime epoch = new DateTime(1970,1,1);
+
+            int days_since_epoch = 15791;
+
+            DateTime converted = epoch.AddDays(days_since_epoch);
+
+            List<DateTime> dateTimes = new List<DateTime>();
+            foreach (var item in dataFrame.ElementAt(0))
+            {
+                int dayNo;
+                int.TryParse(item.ToString(), out dayNo);
+                dateTimes.Add(epoch.AddDays(dayNo));
+            }
+
+            var listOfDates = dateTimes;
             var listOfValues = dataFrame.ElementAt(1).ToList();
 
             var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })
                 .ToDictionary(x => x.k, x => x.v);
 
-            Parallel.ForEach(dic, (item) =>
+            BlockingCollection<CashFlowBasedItem> blockingCollection = new BlockingCollection<CashFlowBasedItem>();
+
+            Parallel.ForEach(dic, (currentItem) =>
             {
                 CashFlowBasedItem cfItem = new CashFlowBasedItem();
-                cfItem.Date = (DateTime) item.Key;
-                cfItem.Cashflow = (double) item.Value;
-                this._producerConsumer.AddToProducer(cfItem);
+                cfItem.Date = (DateTime) currentItem.Key;
+                cfItem.Cashflow = (double) currentItem.Value;
+                blockingCollection.Add(cfItem);
             });
+            
+            this._producerConsumer.Start(blockingCollection);
+            
 
 
 

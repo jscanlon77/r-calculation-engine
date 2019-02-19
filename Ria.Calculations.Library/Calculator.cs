@@ -11,7 +11,9 @@ using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Implementation;
 using Ria.Calculations.Library.Interfaces;
 using Ria.CalculationEngine.Processors;
+using Ria.CalculationEngine.Processors.Implementation;
 using Ria.CalculationEngine.Processors.Interface;
+using Ria.Calculations.Data.Implementation;
 
 namespace Ria.Calculations.Library
 {
@@ -36,7 +38,7 @@ namespace Ria.Calculations.Library
             engine.Evaluate("close(con)");
             engine.Evaluate("load.packages('quantmod')");
             engine.Evaluate("load.packages('TTR')");
-            _engine.Evaluate(@"source('libraries/xirr/xirrcalc.r')");
+            //_engine.Evaluate(@"source('libraries/xirr/xirrcalc.r')");
 
         }
 
@@ -46,8 +48,8 @@ namespace Ria.Calculations.Library
             _container.Register(Component.For<IPriceBasedCalculations>().ImplementedBy<PriceBasedCalculations>());
             _container.Register(Component.For<IInvestmentBasedCalculations>().ImplementedBy<InvestmentBasedCalculations>());
             _container.Register(Component.For<ICashFlowBasedCalculations>().ImplementedBy<CashFlowBasedCalculations>());
-            _container.Register(Component.For<IDataService>().ImplementedBy<IDataService>());
-            _container.Register(AllTypes.FromAssemblyContaining<Calculator>()
+            _container.Register(Component.For<IDataService>().ImplementedBy<DataService>());
+            _container.Register(AllTypes.FromAssemblyNamed("Ria.CalculationEngine.Processors")
                 .BasedOn(typeof(IProducerConsumer<>))
                 .WithService.Base());
 
@@ -87,7 +89,7 @@ namespace Ria.Calculations.Library
 
         public void Calculate()
         {
-            _container.Resolve<InvestmentBasedCalculations>().Calculate(_engine);
+            _container.Resolve<IInvestmentBasedCalculations>().Calculate(_engine);
             _container.Resolve<ICashFlowBasedCalculations>().Calculate(_engine);
             _container.Resolve<IPriceBasedCalculations>().Calculate(_engine);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using CalculationsConsole.Calculations;
 
 namespace CalculationsConsole
 {
@@ -6,7 +7,8 @@ namespace CalculationsConsole
     {
         static void Main(string[] args)
         {
-
+            var calculator = new Calculators();
+            calculator.Calculate();
            
             Console.ReadLine();
         }

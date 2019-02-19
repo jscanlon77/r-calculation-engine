@@ -11,33 +11,44 @@ namespace Ria.CalculationEngine.Processors.Implementation
 {
     public class ProducerConsumer<T> : IProducerConsumer<T>
     {
+        
         const int MaxBufferSize = 500;
-        const int MaxGenerated = 100;
-        const int MaxProducers = 2;
 
-        public void AddToProducer(T item)
+        const int bufferSize = 20;
+
+
+     
+        public void Start(BlockingCollection<T> item)
         {
-            var blockingCollection = new BlockingCollection<T>();
-            var count = 1;
-
-            var timer = new Timer(new TimerCallback(TimerElapsed), blockingCollection, 0 ,5000);
-            Task[] producers = new Task[MaxProducers];
-            for (int i = 0; i < MaxProducers; i++)
+            int initialCount = item.Count;
+            int totalProcessed = 0;
+            Task.Factory.StartNew(() =>
             {
-                var task = Task.Factory.StartNew(() =>
+                var buffer = new List<T>(MaxBufferSize);
+
+                foreach (var value in item.GetConsumingEnumerable())
                 {
-                    while (count <= MaxGenerated)
+                    buffer.Add(value);
+
+                    
+                    if (buffer.Count == bufferSize)
                     {
-                        blockingCollection.Add(item);
-                        Interlocked.Increment(ref count);
-                        Thread.Sleep(100);
+                        totalProcessed += buffer.Count;
+                        ProcessItems(buffer);
+                        buffer.Clear();
                     }
-                });
 
-                producers[i] = task;
-            }
+                    // process the last remaining items which are smaller than the batch size.
+                    if (initialCount - totalProcessed < bufferSize)
+                    {
+                        var items = item.Take(initialCount - totalProcessed).ToList();
+                        ProcessItems(items.ToList());
+                        buffer.Clear();
+                        break;
+                    }
+                }
+            });
 
-            Task.WaitAll(producers);
         }
 
         /// <summary>
@@ -45,24 +56,7 @@ namespace Ria.CalculationEngine.Processors.Implementation
         /// </summary>
         public Action<List<T>> ProcessBatchedItems { get; set; }
 
-        private void TimerElapsed(object state)
-        {
-            var buffer = new List<T>(MaxBufferSize);
-
-            while (((BlockingCollection<T>)state).TryTake(out var item, 0))
-            {
-                buffer.Add(item);
-
-                if (buffer.Count == MaxBufferSize)
-                {
-                    break;
-                }
-            }
-
-            ProcessItems(buffer);
-            buffer.Clear();
-        }
-
+        
         private void ProcessItems(List<T> buffer)
         {
             // Now we can process the batched items correctly by firing an action to the caller.

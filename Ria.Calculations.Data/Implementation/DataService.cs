@@ -34,12 +34,12 @@ namespace Ria.Calculations.Data.Implementation
 
         public void MergeVolatility()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void MergeInvestedCapital()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void MergeVaR()
