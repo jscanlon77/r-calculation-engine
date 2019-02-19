@@ -38,7 +38,7 @@ namespace Ria.Calculations.Library
             engine.Evaluate("close(con)");
             engine.Evaluate("load.packages('quantmod')");
             engine.Evaluate("load.packages('TTR')");
-            //_engine.Evaluate(@"source('libraries/xirr/xirrcalc.r')");
+            _engine.Evaluate(@"source('RLibs/xirr/xirrcalc.r')");
 
         }
 
@@ -56,7 +56,6 @@ namespace Ria.Calculations.Library
 
         }
 
-
         private REngine _engine;
         private WindsorContainer _container;
         public void Initialize(string[] tickers)
@@ -71,7 +70,7 @@ namespace Ria.Calculations.Library
             _engine.Evaluate("tickers.temp = spl(nasdaqCharacterVector)");
 
             _engine.SetSymbol("tickerVector", tickerVector);
-            _engine.Evaluate("tickers = spl(tickerVector)"); // print out in the console
+            _engine.Evaluate("tickers = spl(tickerVector)"); 
 
             _engine.Evaluate("data.fund <- new.env()");
             _engine.Evaluate("for (i in 1:len(tickers)) {data.fund[[tickers[i]]] = fund.data(tickers.temp[i], 80, 'annual')};");

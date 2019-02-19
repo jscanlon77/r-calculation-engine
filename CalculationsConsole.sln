@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.CalculationEngine.Proce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Model", "Ria.Model\Ria.Model.csproj", "{5306A42C-6EDE-4658-8E22-E129701AF9C3}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CalculationsDB", "CalculationsDB\CalculationsDB.sqlproj", "{36CBBDBF-FA15-4C59-98EF-F2D93340808B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,12 @@ Global
 		{5306A42C-6EDE-4658-8E22-E129701AF9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5306A42C-6EDE-4658-8E22-E129701AF9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5306A42C-6EDE-4658-8E22-E129701AF9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CBBDBF-FA15-4C59-98EF-F2D93340808B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
