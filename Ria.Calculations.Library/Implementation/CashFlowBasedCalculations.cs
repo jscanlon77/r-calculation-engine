@@ -77,8 +77,6 @@ namespace Ria.Calculations.Library.Implementation
 
             int days_since_epoch = 15791;
 
-            DateTime converted = epoch.AddDays(days_since_epoch);
-
             List<DateTime> dateTimes = new List<DateTime>();
             foreach (var item in dataFrame.ElementAt(0))
             {
