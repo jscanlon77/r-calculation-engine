@@ -14,7 +14,7 @@ using Ria.Calculations.Library.Model;
 
 namespace Ria.Calculations.Library.Implementation
 {
-    public class CashFlowBasedCalculations : CalculationBase, ICashFlowBasedCalculations
+    public class CashFlowBasedCalculations : CalculationBase, ICashFlowBasedCalculations, IDisposable
     {
         private readonly IDataService _dataService;
         private readonly IProducerConsumer<CashFlowBasedItem> _producerConsumer;
@@ -108,6 +108,11 @@ namespace Ria.Calculations.Library.Implementation
 
 
 
+        }
+
+        public void Dispose()
+        {
+            _producerConsumer.ProcessBatchedItems -= this.OnProcessBatchedItems;
         }
     }
 }
