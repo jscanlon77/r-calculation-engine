@@ -179,23 +179,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FinTechnology\\.nuget\\packages\\": {},
+    "C:\\Users\\Multiple Monitors\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\FinTechnology\\Calculations\\CalculationsConsole\\Ria.CalculationEngine.Tests\\Ria.CalculationEngine.Tests.csproj",
+      "projectUniqueName": "E:\\Interview\\r-calculation-engine\\Ria.CalculationEngine.Tests\\Ria.CalculationEngine.Tests.csproj",
       "projectName": "Ria.CalculationEngine.Tests",
-      "projectPath": "c:\\FinTechnology\\Calculations\\CalculationsConsole\\Ria.CalculationEngine.Tests\\Ria.CalculationEngine.Tests.csproj",
-      "packagesPath": "C:\\Users\\FinTechnology\\.nuget\\packages\\",
-      "outputPath": "c:\\FinTechnology\\Calculations\\CalculationsConsole\\Ria.CalculationEngine.Tests\\obj\\",
+      "projectPath": "E:\\Interview\\r-calculation-engine\\Ria.CalculationEngine.Tests\\Ria.CalculationEngine.Tests.csproj",
+      "packagesPath": "C:\\Users\\Multiple Monitors\\.nuget\\packages\\",
+      "outputPath": "E:\\Interview\\r-calculation-engine\\Ria.CalculationEngine.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\FinTechnology\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Multiple Monitors\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -3,3 +3,17 @@
 ################################################################################
 
 /.vs/CalculationsConsole/v15
+/CalculationsConsole/bin/Debug
+/CalculationsConsole/obj/Debug
+/packages
+/Ria.Calculations.Libraries.Test/bin/Debug
+/Ria.Calculations.Libraries.Test/obj/Debug
+/Ria.Calculations.Library/bin/Debug
+/Ria.Calculations.Data.Tests/bin/Debug/netstandard2.0
+/Ria.Calculations.Data.Tests/obj
+/Ria.Calculations.Library/obj/Debug
+/Ria.Calculations.Library.Tests/bin/Debug/netstandard2.0
+/Ria.Calculations.Library.Tests/obj/Debug/netstandard2.0
+/Ria.Calculations.Library.Tests/obj
+/Ria.Calculations.Data/bin/Debug
+/Ria.Calculations.Data/obj/Debug

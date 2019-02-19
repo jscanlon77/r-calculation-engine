@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Calculations.Library", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Calculations.Data", "Ria.Calculations.Data\Ria.Calculations.Data.csproj", "{D023B37E-A323-4C8C-A150-629F45BD375E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.CalculationEngine.Tests", "Ria.CalculationEngine.Tests\Ria.CalculationEngine.Tests.csproj", "{8AF1987B-ED1A-4AA5-9C39-4DC486399224}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ria.CalculationEngine.Tests", "Ria.CalculationEngine.Tests\Ria.CalculationEngine.Tests.csproj", "{8AF1987B-ED1A-4AA5-9C39-4DC486399224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Calculations.Data.Tests", "Ria.Calculations.Data.Tests\Ria.Calculations.Data.Tests.csproj", "{4120E242-1076-4C7D-A8B4-EB8B261E8F19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ria.Calculations.Data.Tests", "Ria.Calculations.Data.Tests\Ria.Calculations.Data.Tests.csproj", "{4120E242-1076-4C7D-A8B4-EB8B261E8F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Calculations.Library.Tests", "Ria.Calculations.Library.Tests\Ria.Calculations.Library.Tests.csproj", "{F4BABF6A-41D2-4D8A-B1E5-5A8E8037E8AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ria.Calculations.Libraries.Test", "Ria.Calculations.Libraries.Test\Ria.Calculations.Libraries.Test.csproj", "{291C4A65-2437-4B68-AD74-FD0EA7989885}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{4120E242-1076-4C7D-A8B4-EB8B261E8F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4120E242-1076-4C7D-A8B4-EB8B261E8F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4120E242-1076-4C7D-A8B4-EB8B261E8F19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4BABF6A-41D2-4D8A-B1E5-5A8E8037E8AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4BABF6A-41D2-4D8A-B1E5-5A8E8037E8AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4BABF6A-41D2-4D8A-B1E5-5A8E8037E8AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4BABF6A-41D2-4D8A-B1E5-5A8E8037E8AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{291C4A65-2437-4B68-AD74-FD0EA7989885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{291C4A65-2437-4B68-AD74-FD0EA7989885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{291C4A65-2437-4B68-AD74-FD0EA7989885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{291C4A65-2437-4B68-AD74-FD0EA7989885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

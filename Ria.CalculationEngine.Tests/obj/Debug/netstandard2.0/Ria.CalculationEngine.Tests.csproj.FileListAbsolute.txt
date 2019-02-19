@@ -7,3 +7,12 @@ c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\ob
 c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.AssemblyInfo.cs
 c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.dll
 c:\FinTechnology\Calculations\CalculationsConsole\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.pdb
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.deps.json
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.dll
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\bin\Debug\netstandard2.0\Ria.CalculationEngine.Tests.pdb
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.csprojAssemblyReference.cache
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.csproj.CoreCompileInputs.cache
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.AssemblyInfoInputs.cache
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.AssemblyInfo.cs
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.dll
+E:\Interview\r-calculation-engine\Ria.CalculationEngine.Tests\obj\Debug\netstandard2.0\Ria.CalculationEngine.Tests.pdb
