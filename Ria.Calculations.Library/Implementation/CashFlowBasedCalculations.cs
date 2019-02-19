@@ -8,9 +8,9 @@ using RDotNet;
 using Ria.CalculationEngine.Processors.Interface;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Base;
-using Ria.Calculations.Library.Events;
 using Ria.Calculations.Library.Interfaces;
-using Ria.Calculations.Library.Model;
+using Ria.Model.Events;
+using Ria.Model.Model;
 
 namespace Ria.Calculations.Library.Implementation
 {
@@ -30,7 +30,7 @@ namespace Ria.Calculations.Library.Implementation
         private void OnProcessBatchedItems(IEnumerable<CashFlowBasedItem> cashFlowBasedItems)
         {
             // Now send the batched items to the database probably via some sort of SqlBulkCopy
-            this._dataService.MergeCashFlows();
+            this._dataService.MergeCashFlows(cashFlowBasedItems);
         }
 
         public override void Calculate(REngine engine)

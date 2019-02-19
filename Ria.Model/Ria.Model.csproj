@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D023B37E-A323-4C8C-A150-629F45BD375E}</ProjectGuid>
+    <ProjectGuid>{5306A42C-6EDE-4658-8E22-E129701AF9C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ria.Calculations.Data</RootNamespace>
-    <AssemblyName>Ria.Calculations.Data</AssemblyName>
+    <RootNamespace>Ria.Model</RootNamespace>
+    <AssemblyName>Ria.Model</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,15 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Implementation\DataService.cs" />
-    <Compile Include="Interfaces\IDataService.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Events\CalculationNotificationEvent.cs" />
+    <Compile Include="Model\CashFlowBasedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ria.Model\Ria.Model.csproj">
-      <Project>{5306A42C-6EDE-4658-8E22-E129701AF9C3}</Project>
-      <Name>Ria.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

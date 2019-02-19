@@ -79,6 +79,10 @@
       <Project>{B7BDCF25-0E3F-45DA-9BE9-906D5283DF30}</Project>
       <Name>Ria.Calculations.Library</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ria.Model\Ria.Model.csproj">
+      <Project>{5306A42C-6EDE-4658-8E22-E129701AF9C3}</Project>
+      <Name>Ria.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

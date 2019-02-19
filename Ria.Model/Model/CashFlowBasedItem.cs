@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Ria.Calculations.Library.Model
+namespace Ria.Model.Model
 {
     public class CashFlowBasedItem
     {

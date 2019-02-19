@@ -1,4 +1,6 @@
-﻿using Ria.Calculations.Data.Interfaces;
+﻿using System.Collections.Generic;
+using Ria.Calculations.Data.Interfaces;
+using Ria.Model.Model;
 
 namespace Ria.Calculations.Data.Implementation
 {
@@ -11,7 +13,7 @@ namespace Ria.Calculations.Data.Implementation
             // We'll be able to swap out the provider with a factory or some such mechanism.
         }
 
-        public void MergeCashFlows()
+        public void MergeCashFlows(IEnumerable<CashFlowBasedItem> cashFlowBasedItems)
         {
             // some implementation for storing cashflows
         }

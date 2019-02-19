@@ -1,9 +1,12 @@
-﻿namespace Ria.Calculations.Data.Interfaces
+﻿using System.Collections.Generic;
+using Ria.Model.Model;
+
+namespace Ria.Calculations.Data.Interfaces
 {
     public interface IDataService
     {
         void MergePrices();
-        void MergeCashFlows();
+        void MergeCashFlows(IEnumerable<CashFlowBasedItem> cashFlowBasedItems);
         void MergeXirr();
         void MergeHistoricalPositions();
         void MergeHistoricalReturns();

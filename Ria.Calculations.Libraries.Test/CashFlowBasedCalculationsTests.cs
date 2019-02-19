@@ -4,7 +4,7 @@ using RDotNet;
 using Ria.CalculationEngine.Processors.Interface;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Implementation;
-using Ria.Calculations.Library.Model;
+using Ria.Model.Model;
 
 namespace Ria.Calculations.Libraries.Test
 {

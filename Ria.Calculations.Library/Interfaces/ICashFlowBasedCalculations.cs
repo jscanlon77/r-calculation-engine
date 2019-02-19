@@ -1,6 +1,6 @@
 ﻿using System;
 using RDotNet;
-using Ria.Calculations.Library.Events;
+using Ria.Model.Events;
 
 namespace Ria.Calculations.Library.Interfaces
 {

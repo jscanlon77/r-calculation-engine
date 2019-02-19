@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="Base\CalculationBase.cs" />
     <Compile Include="Calculator.cs" />
-    <Compile Include="Events\CalculationNotificationEvent.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="Implementation\CashFlowBasedCalculations.cs" />
     <Compile Include="Implementation\PriceBasedCalculations.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="Interfaces\IInvestmentBasedCalculations.cs" />
     <Compile Include="Implementation\InvestmentBasedCalculations.cs" />
     <Compile Include="Interfaces\IPriceBasedCalculations.cs" />
-    <Compile Include="Model\CashFlowBasedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +85,10 @@
     <ProjectReference Include="..\Ria.Calculations.Data\Ria.Calculations.Data.csproj">
       <Project>{D023B37E-A323-4C8C-A150-629F45BD375E}</Project>
       <Name>Ria.Calculations.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ria.Model\Ria.Model.csproj">
+      <Project>{5306A42C-6EDE-4658-8E22-E129701AF9C3}</Project>
+      <Name>Ria.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
