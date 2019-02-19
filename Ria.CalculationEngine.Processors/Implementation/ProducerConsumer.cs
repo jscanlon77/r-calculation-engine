@@ -49,10 +49,10 @@ namespace Ria.CalculationEngine.Processors.Implementation
         /// <summary>
         /// And an action to process the items through the buffer.
         /// </summary>
-        public Action<List<T>> ProcessBatchedItems { get; set; }
+        public Action<IEnumerable<T>> ProcessBatchedItems { get; set; }
 
         
-        private void ProcessItems(List<T> buffer)
+        private void ProcessItems(IEnumerable<T> buffer)
         {
             // Now we can process the batched items correctly by firing an action to the caller.
             this.ProcessBatchedItems?.Invoke(buffer);

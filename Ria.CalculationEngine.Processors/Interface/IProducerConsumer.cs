@@ -7,7 +7,7 @@ namespace Ria.CalculationEngine.Processors.Interface
     public interface IProducerConsumer<T>
     {
         void Start(BlockingCollection<T> items);
-        Action<List<T>> ProcessBatchedItems { get; set; }
+        Action<IEnumerable<T>> ProcessBatchedItems { get; set; }
        
     }
 }

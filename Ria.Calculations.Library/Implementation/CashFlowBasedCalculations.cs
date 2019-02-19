@@ -27,7 +27,7 @@ namespace Ria.Calculations.Library.Implementation
             _producerConsumer.ProcessBatchedItems += OnProcessBatchedItems;
         }
 
-        private void OnProcessBatchedItems(List<CashFlowBasedItem> cashFlowBatchedItems)
+        private void OnProcessBatchedItems(IEnumerable<CashFlowBasedItem> cashFlowBasedItems)
         {
             // Now send the batched items to the database probably via some sort of SqlBulkCopy
             this._dataService.MergeCashFlows();
