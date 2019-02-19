@@ -112,7 +112,22 @@ namespace Ria.Calculations.Library.Implementation
 
         public void Dispose()
         {
-            _producerConsumer.ProcessBatchedItems -= this.OnProcessBatchedItems;
+            Cleanup(true);
+            GC.SuppressFinalize(this);
+        }
+        private void Cleanup(bool disposing)
+        {
+            if (!disposing)
+            {
+                _producerConsumer.ProcessBatchedItems -= this.OnProcessBatchedItems;
+            }
+
+        }
+
+        public void Finalize()
+        {
+            Cleanup(false);
+
         }
     }
 }
