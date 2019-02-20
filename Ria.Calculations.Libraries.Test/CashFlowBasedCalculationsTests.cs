@@ -39,11 +39,7 @@ namespace Ria.Calculations.Libraries.Test
             Assert.IsTrue(eventWasCalled);
 
         }
-
-        private void NotificationEvent(CalculationNotificationEvent obj)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
-    }
+    
 }
