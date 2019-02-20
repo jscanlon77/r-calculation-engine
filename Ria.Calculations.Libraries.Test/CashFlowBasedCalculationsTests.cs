@@ -4,6 +4,7 @@ using RDotNet;
 using Ria.CalculationEngine.Processors.Interface;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Implementation;
+using Ria.Model.Events;
 using Ria.Model.Model;
 
 namespace Ria.Calculations.Libraries.Test
@@ -32,7 +33,17 @@ namespace Ria.Calculations.Libraries.Test
             
             this._cashFlowBasedCalculations.Calculate(It.IsAny<REngine>());
 
+            var eventWasCalled = false;
             // some assertions that we fired an event and that the data service was properly called.
+            this._cashFlowBasedCalculations.NotificationEvent += (notificationEvent) => { eventWasCalled = true; };
+            Assert.IsTrue(eventWasCalled);
+
         }
+
+        private void NotificationEvent(CalculationNotificationEvent obj)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
     }
 }
