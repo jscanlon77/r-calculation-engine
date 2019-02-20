@@ -34,7 +34,8 @@ namespace Ria.Calculations.Libraries.Test
             this._cashFlowBasedCalculations.Calculate(It.IsAny<REngine>());
 
             var eventWasCalled = false;
-            // some assertions that we fired an event and that the data service was properly called.
+            // some assertions that we fired an event and that the data service was properly called with the right data as well.
+            // i.e that it was successful.
             this._cashFlowBasedCalculations.NotificationEvent += (notificationEvent) => { eventWasCalled = true; };
             Assert.IsTrue(eventWasCalled);
 
