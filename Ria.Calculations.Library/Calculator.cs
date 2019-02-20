@@ -75,7 +75,6 @@ namespace Ria.Calculations.Library
             _engine.Evaluate("data.fund <- new.env()");
             _engine.Evaluate("for (i in 1:len(tickers)) {data.fund[[tickers[i]]] = fund.data(tickers.temp[i], 80, 'annual')};");
 
-            // Load some pricing data into a data frame and then get it out in .NET
             _engine.Evaluate("data <- new.env()");
             _engine.Evaluate("getSymbols(tickers, src = 'yahoo', from = '1970-01-01', env = data, auto.assign = T)");
             _engine.Evaluate("for (i in ls(data)) {data[[i]] = adjustOHLC(data[[i]], use.Adjusted = T)};");
@@ -95,6 +94,7 @@ namespace Ria.Calculations.Library
             ibc.Calculate(_engine);
             ipb.Calculate(_engine);
             icc.Calculate(_engine);
+            
         }
     }
 }

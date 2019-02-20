@@ -22,3 +22,5 @@
 bin
 /CalculationsConsole/obj
 /Ria.Model/obj/Debug
+/CalculationsDB/obj/Debug
+/CalculationsDB
