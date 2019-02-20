@@ -25,6 +25,7 @@ namespace Ria.Calculations.Libraries.Test
 
             // We will need to set up the REngine so that we can test the stuff with info relevant to the 
             // R.DOTNET client and the RLibs.
+            // i.e set up the evaluations and the conditions that the engine will test
         }
 
         [Test]
