@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data;
+using System.Linq;
 using RDotNet;
 using Ria.Calculations.Data.Interfaces;
 using Ria.Calculations.Library.Base;
@@ -32,7 +33,7 @@ namespace Ria.Calculations.Library.Implementation
             // JS - actually refactor this as we are doing the same thing multiple times.
             engine.Evaluate("ICP = get.fund.data('invested capital', fund, fund.date)");
             engine.Evaluate("result <- data.frame(date=as.character(index(ICP)), coredata(ICP))");
-
+            
             var dataFrame = engine.Evaluate("result").AsDataFrame();
             var listOfDates = dataFrame.ElementAt(0).ToList();
             var listOfValues = dataFrame.ElementAt(1).ToList();
@@ -62,9 +63,35 @@ namespace Ria.Calculations.Library.Implementation
         /// <param name="engine"></param>
         private void MergeTotalEquities(REngine engine)
         {
-            engine.Evaluate("CEQ = get.fund.data('total equity', fund, fund.date)");
-            engine.Evaluate("result <- data.frame(date=as.character(index(CEQ)), coredata(CEQ))");
+            //#Delete all dates with no prices
+
+            engine.Evaluate("portfolioPrices <- portfolioPrices[apply(portfolioPrices,1,function(x) all(!is.na(x))),]");
+            engine.Evaluate("colnames(portfolioPrices) <- tickers");
+
+            engine.Evaluate("result <- data.frame(date=as.character(index(portfolioPrices)), coredata(portfolioPrices))");
             var dataFrame = engine.Evaluate("result").AsDataFrame();
+
+            DataTable table = new DataTable("Positions");
+
+            //DataGridView 
+            //for (int i = 0; i < dataset.ColumnCount; ++i)
+            //{
+            //    dataGridView1.ColumnCount++;
+            //    dataGridView1.Columns[i].Name = dataset.ColumnNames[i];
+            //}
+ 
+            //for (int i = 0; i < dataset.RowCount; ++i)
+            //{
+            //    dataGridView1.RowCount++;
+            //    dataGridView1.Rows[i].HeaderCell.Value = dataset.RowNames[i];
+ 
+            //    for (int k = 0; k < dataset.ColumnCount; ++k)
+            //    {
+            //        dataGridView1[k, i].Value = dataset[i,k];
+ 
+            //    }
+ 
+            //}
             var listOfDates = dataFrame.ElementAt(0).ToList();
             var listOfValues = dataFrame.ElementAt(1).ToList();
             var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })

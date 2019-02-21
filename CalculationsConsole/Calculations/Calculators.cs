@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Ria.Calculations.Library;
 
 namespace CalculationsConsole.Calculations
@@ -20,7 +21,7 @@ namespace CalculationsConsole.Calculations
             // and allow a full calculation or calculation from T-1 or anything else.
             // our example will use APPLE..
             // TODO: This needs to offer much more options.
-            calculator.Initialize(new []{"AAPL"});
+            calculator.Initialize(new []{"AAPL","GOOG","MSFT"}, "2016-01-01");
 
             // TODO - put some error checking here...
             calculator.Calculate();

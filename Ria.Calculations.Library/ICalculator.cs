@@ -1,8 +1,10 @@
-﻿namespace Ria.Calculations.Library
+﻿using System;
+
+namespace Ria.Calculations.Library
 {
     public interface ICalculator
     {
-        void Initialize(string[] ticker);
+        void Initialize(string[] ticker, string startDate);
         void Calculate();
     }
 }
