@@ -9,40 +9,18 @@ namespace Ria.Calculations.Library.Implementation
     public class PriceBasedCalculations: CalculationBase, IPriceBasedCalculations
     {
         private readonly IDataService _dataService;
-
-        private object _syncLock = new object();
         public PriceBasedCalculations(IDataService dataService)
         {
             _dataService = dataService;
         }
 
-        private void MergePrices(REngine engine)
-        {
-            engine.Evaluate("prices = Cl(data[[tickers[1]]]['1995::'])");
-
-            engine.Evaluate("res <- data.frame(date=as.character(index(prices)), coredata(prices))");
-
-            var dataFrame = engine.Evaluate("res").AsDataFrame();
-
-            var listOfDates = dataFrame.ElementAt(0).ToList();
-            var listOfValues = dataFrame.ElementAt(1).ToList();
-
-            var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })
-                .ToDictionary(x => x.k, x => x.v);
-
-            // now do a merge of the prices including new prices into the database
-            this._dataService.MergePrices();
-        }
-
+        
         public override void Calculate(REngine engine)
         {
-            lock (_syncLock)
-            {
-                MergePrices(engine);
-                MergePriceBasedCalcs(engine);
+            MergePriceBasedCalcs(engine);
                 MergeVolatility(engine);
                 MergeVaR(engine);
-            }
+     
 
         }
 

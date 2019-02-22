@@ -43,6 +43,7 @@ namespace Ria.Calculations.Library
             engine.Evaluate("load.packages('PerformanceAnalytics')");
             engine.Evaluate("load.packages('TTR')");
             _engine.Evaluate(@"source('RLibs/xirr/xirrcalc.r')");
+            _engine.Evaluate("load.packages('reshape2')");
 
         }
 
@@ -105,7 +106,7 @@ namespace Ria.Calculations.Library
 
             _engine.Evaluate("portfolioPrices <- NULL");
             _engine.Evaluate("for (Ticker in tickers) {" +
-                            $"portfolioPrices <- cbind(portfolioPrices, getSymbols.yahoo(Ticker, from={startDate}, periodicity = \"daily\", auto.assign=FALSE)[,4])" +
+                            $"portfolioPrices <- cbind(portfolioPrices, getSymbols.yahoo(Ticker, from={startDate}, periodicity = \"daily\", auto.assign=FALSE)[,3])" +
                             "}");
 
 
