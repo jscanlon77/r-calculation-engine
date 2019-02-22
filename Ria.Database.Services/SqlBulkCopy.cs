@@ -11,10 +11,22 @@ namespace Ria.Database.Services
 {
     public class SqlBulkCopy<T> : ISqlBulkCopy<T>
     {
-        public void Load(IEnumerable<T> collection, string[] columns, string tableName)
+        public void Load(IEnumerable<T> collection, string[] columns, string tableName, bool truncateFirst = false)
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["BulkCopyConnection"].ConnectionString))
             {
+                if (truncateFirst)
+                {
+                    connection.Open();
+                    // Execute the truncate statement
+                    string query = $"TRUNCATE TABLE {tableName}";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
                 using (var bcp = new SqlBulkCopy(connection.ConnectionString, SqlBulkCopyOptions.TableLock))
                 using (var reader = ObjectReader.Create(collection, columns))
                 {

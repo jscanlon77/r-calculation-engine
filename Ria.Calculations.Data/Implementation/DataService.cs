@@ -19,7 +19,7 @@ namespace Ria.Calculations.Data.Implementation
             // do the data implementation and use ADO.NET, ORM, NOSQL or whatever
             // allowing us to be testable.
             // We'll be able to swap out the provider with a factory or some such mechanism.
-            this._sqlBulkCopy.Load(pricesList, new []{"DateTime", "Ticker", "Price"}, "Prices_Staging");
+            this._sqlBulkCopy.Load(pricesList, new []{"DateTime", "Ticker", "Price"}, "Prices_Staging", true);
         }
 
         public void MergeCashFlows(IEnumerable<CashFlowBasedItem> cashFlowBasedItems)

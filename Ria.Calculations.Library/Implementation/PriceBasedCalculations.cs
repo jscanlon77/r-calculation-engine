@@ -55,9 +55,9 @@ namespace Ria.Calculations.Library.Implementation
         /// <param name="engine"></param>
         private void MergePriceBasedCalcs(REngine engine)
         {
-            // So first of all we need to get our prices and calculate the historical returns
-            engine.Evaluate("a <- c(prices)");
-            engine.Evaluate("res <- ROC(a, type='discrete') * 100");
+            //// So first of all we need to get our prices and calculate the historical returns
+            //engine.Evaluate("a <- c(prices)");
+            //engine.Evaluate("res <- ROC(a, type='discrete') * 100");
 
             this._dataService.MergeHistoricalReturns();
         }

@@ -8,6 +8,6 @@ namespace Ria.Database.Services
 {
     public interface ISqlBulkCopy<T>
     {
-        void Load(IEnumerable<T> collection, string[] columns, string tableName);
+        void Load(IEnumerable<T> collection, string[] columns, string tableName, bool truncateFirst=false);
     }
 }

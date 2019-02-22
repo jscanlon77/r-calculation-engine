@@ -34,16 +34,16 @@ namespace Ria.Calculations.Library.Implementation
         {
             // JS - Improvement substitute in the string in the R to do the function evaluation
             // JS - actually refactor this as we are doing the same thing multiple times.
-            engine.Evaluate("ICP = get.fund.data('invested capital', fund, fund.date)");
-            engine.Evaluate("result <- data.frame(date=as.character(index(ICP)), coredata(ICP))");
+            //engine.Evaluate("ICP = get.fund.data('invested capital', fund, fund.date)");
+            //engine.Evaluate("result <- data.frame(date=as.character(index(ICP)), coredata(ICP))");
             
-            var dataFrame = engine.Evaluate("result").AsDataFrame();
-            var listOfDates = dataFrame.ElementAt(0).ToList();
-            var listOfValues = dataFrame.ElementAt(1).ToList();
-            var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })
-                .ToDictionary(x => x.k, x => x.v);
+            //var dataFrame = engine.Evaluate("result").AsDataFrame();
+            //var listOfDates = dataFrame.ElementAt(0).ToList();
+            //var listOfValues = dataFrame.ElementAt(1).ToList();
+            //var dic = listOfDates.Zip(listOfValues, (k, v) => new { k, v })
+            //    .ToDictionary(x => x.k, x => x.v);
 
-            this._dataService.MergeInvestedCapital();
+            //this._dataService.MergeInvestedCapital();
         }
 
         private void MergeGrowthRates(REngine engine)
