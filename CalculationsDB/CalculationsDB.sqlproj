@@ -63,5 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Tickers.sql" />
+    <Build Include="dbo\Tables\Prices_Staging.sql" />
   </ItemGroup>
 </Project>

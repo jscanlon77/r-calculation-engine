@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ria.Database.Services\Ria.Database.Services.csproj">
+      <Project>{B469856D-F5FF-45CF-97C7-3FE45CC53610}</Project>
+      <Name>Ria.Database.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ria.Model\Ria.Model.csproj">
       <Project>{5306A42C-6EDE-4658-8E22-E129701AF9C3}</Project>
       <Name>Ria.Model</Name>

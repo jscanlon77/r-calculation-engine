@@ -18,6 +18,11 @@ namespace Ria.Database.Services
                 using (var bcp = new SqlBulkCopy(connection.ConnectionString, SqlBulkCopyOptions.TableLock))
                 using (var reader = ObjectReader.Create(collection, columns))
                 {
+
+                    bcp.ColumnMappings.Add(columns[0], "Date");
+                    bcp.ColumnMappings.Add(columns[1], "Ticker");
+                    bcp.ColumnMappings.Add(columns[2], "Price");
+
                     bcp.BulkCopyTimeout = 120;
                     bcp.BatchSize = 0;
                     bcp.DestinationTableName = tableName;

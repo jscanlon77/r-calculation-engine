@@ -15,6 +15,7 @@ using Ria.CalculationEngine.Processors;
 using Ria.CalculationEngine.Processors.Implementation;
 using Ria.CalculationEngine.Processors.Interface;
 using Ria.Calculations.Data.Implementation;
+using Ria.Database.Services;
 
 namespace Ria.Calculations.Library
 {
@@ -70,6 +71,9 @@ namespace Ria.Calculations.Library
             _container.Register(Component.For<IDataService>().ImplementedBy<DataService>());
             _container.Register(AllTypes.FromAssemblyNamed("Ria.CalculationEngine.Processors")
                 .BasedOn(typeof(IProducerConsumer<>))
+                .WithService.Base());
+            _container.Register(AllTypes.FromAssemblyNamed("Ria.Database.Services")
+                .BasedOn(typeof(ISqlBulkCopy<>))
                 .WithService.Base());
 
 
